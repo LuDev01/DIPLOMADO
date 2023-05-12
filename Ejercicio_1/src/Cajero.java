@@ -28,12 +28,16 @@ public class Cajero {
 
                     if (transf.equals(1) && valor > card1) {
                         JOptionPane.showMessageDialog(null, "No tienes saldo");
+                    } else if (transf.equals(1) && valor < card1) {
+                        card1=card1-valor;
+                        card2=card2+valor;
+                        JOptionPane.showMessageDialog(null,"Transferencia completada");
                     } else if (transf.equals(2) && valor > card2) {
                         JOptionPane.showMessageDialog(null, "No tienes saldo");
 
                     } else if (transf.equals(2) && valor < card2) {
                         card2=card2-valor;
-                        card1=card1*valor;
+                        card1=card1+valor;
                         JOptionPane.showMessageDialog(null,"Transferencia completada");
                     }
 
